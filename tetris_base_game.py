@@ -1,15 +1,11 @@
 """ File containing functionality to run the Tetris game """
 import pygame
 
-import numpy as np
-
 from tetris import Tetris
-from agent import TetrisAgent
 
 
 if __name__ == '__main__':
 	tetris = Tetris()
-	# player = TetrisAgent()
 
 	window = pygame.display.set_mode((tetris.window_width, tetris.window_height))
 	pygame.display.set_caption('Tetris')
@@ -31,9 +27,6 @@ if __name__ == '__main__':
 	while run:
 		# Create new grid with updated locked positions
 		grid = tetris.create_grid(locked_positions)
-		
-		if locked_positions != {}:
-			print(grid)
 
 		fall_time += clock.get_rawtime()
 		level_time += clock.get_rawtime()

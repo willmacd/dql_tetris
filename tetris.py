@@ -80,7 +80,7 @@ class Tetris:
 		return False
 
 	def get_shape(self):
-		return Piece(5, 0, random.choice(self.shapes))
+		return Piece(random.choice(self.shapes))
 
 	def draw_text_middle(self, text: str, size: int, colour: str, surface: pygame.display):
 		font = pygame.font.Font('./arcade.TTF', size) # , bold=False, italic=True)

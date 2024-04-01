@@ -98,11 +98,12 @@ SHAPE_LOOKUP = {"S": ([['.....',
 
 
 class Piece(object):
-    def __init__(self, column: int, row: int, shape: str):
-        self.x = column
-        self.y = row
+    def __init__(self, shape: str):
+       self.shape = SHAPE_LOOKUP[shape][0]
+       self.colour = SHAPE_LOOKUP[shape][1]
 
-        self.shape = SHAPE_LOOKUP[shape][0]
-        self.colour = SHAPE_LOOKUP[shape][1]
-        self.rotation = 0
-    
+       shape_start_pos = {'S': (5, 2), 'Z': (5, 2), 'I': (5, 3), 'O': (5, 2), 'J': (5, 3), 'L': (5, 3), 'T': (5, 3)}
+
+       self.x = shape_start_pos[shape][0]
+       self.y = shape_start_pos[shape][1]
+       self.rotation = 0
